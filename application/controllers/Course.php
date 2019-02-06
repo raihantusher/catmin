@@ -35,6 +35,7 @@ class Course extends MY_Controller {
 
         $data['headline'] = $data['title'] = 'All Courses';
 
+				echo $this->get_role_id();
 				$this->layout("Course/index",$data);
 	}
 
