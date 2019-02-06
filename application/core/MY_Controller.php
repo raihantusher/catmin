@@ -38,4 +38,39 @@ class MY_Controller extends CI_Controller {
    }
 
 
+    function get_role_id()
+    {
+        $session_data = $this->session->userdata('data');
+        return !empty($session_data) ? $session_data['role_id'] : false;
+    }
+
+
+    public function get_login_name()
+    {
+        $user = $this->ci->session->userdata('data');
+        return !empty($user) ? $user['full_name'] : false;
+    }
+
+    function is_super_admin()
+    {
+        $session_data = $this->session->userdata('data');
+        return ($session_data['is_super_admin'] == '1' && $session_data['role_id'] == '1');
+    }
+
+
+    function get_user_id()
+    {
+        return $this->session->userdata('data')['id'];
+    }
+
+    function is_ip()
+    {
+        $user_id = $this->session->userdata('data')['id'];
+        $check = $this->db->query("SELECT `is_super_admin`, `role_id` FROM `users` WHERE `id` = '$user_id'")->row();
+        return !($check->role_id == '1');
+    }
+
+
+
+
 }
