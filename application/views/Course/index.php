@@ -6,7 +6,7 @@
           <div class="card-body">
             <div class="d-flex docs-highlight mb-3">
                 <div class="mr-auto p-2 docs-highlight">Flex item</div>
-                <div class=""><a href="<?site_url("course/add")?>" class="btn btn-success">Add Course</a>
+                <div class=""><a href="<?=site_url("course/add")?>" class="btn btn-success">Add Course</a>
 
             </div>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
