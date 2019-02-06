@@ -81,7 +81,7 @@ class Course_model extends CI_Model
     //get single row by id
     function get_info_by_id($id)
     {
-        $this->db->select('*'); //select *
+        $this->db->select('*');//select *
         $this->db->from('course');// from projects
         $this->db->where('id', $id);//where id=$id;
         return $this->db->get()->row();//return the row
@@ -124,7 +124,7 @@ class Course_model extends CI_Model
     function delete($id)
     {
 
-            return $this->db->delete('course', ['id' => $id]);//delete projects by id
+        return $this->db->delete('course', ['id' => $id]); //delete projects by id
 
     }
 }
