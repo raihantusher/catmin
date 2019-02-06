@@ -6,7 +6,7 @@
           <div class="card-body">
             <div class="d-flex docs-highlight mb-3">
                 <div class="mr-auto p-2 docs-highlight">Flex item</div>
-                
+
             </div>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
           ex ea commodo consequat.
@@ -26,8 +26,8 @@
               </thead>
               <tbody>
                               <?php
-                    if(count($course) > 0){
-                        foreach ($course as $row) {
+                    if(count($courses) > 0){
+                        foreach ($courses as $row) {
                           ?>
                             <tr>
                                 <td><?php echo $row->course_title ?></td>
@@ -35,7 +35,12 @@
                                 <td><?php echo $row->course_tag ?> </td>
                                 <td><?php echo $row->date ?> </td>
                                 <td>
-                                    <button type="button" class="btn btn-primary">
+                                  <!--<?php// echo anchor("Course/edit/".$row->id,"class"=>"btn btn-primary")?>-->
+                                  <a href="<?=site_url("course/edit/").$row->id ?>" class="btn btn-primary">edit</a>
+                                  <a href="<?=site_url("course/delete/").$row->id ?>" class="btn btn-primary" onclick="return confirm('Are your sure?')">
+                                      <i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                                    <button type="button" class="btn btn-primary" >
                                         <i class="fa fa-pencil"></i>
                                       </button>
                                       <button type="button" class="btn btn-danger">
@@ -52,33 +57,18 @@
                         <tr>
                         <td scope="col">no data found</td>
                        </tr>
-                      <?php  
+                      <?php
 
                     }
                   ?>
-               
+
               </tbody>
           </table>
-<ul class="pagination">
-<li class="page-item">
-<a class="page-link" href="#">Prev</a>
-</li>
-<li class="page-item active">
-<a class="page-link" href="#">1</a>
-</li>
-<li class="page-item">
-<a class="page-link" href="#">2</a>
-</li>
-<li class="page-item">
-<a class="page-link" href="#">3</a>
-</li>
-<li class="page-item">
-<a class="page-link" href="#">4</a>
-</li>
-<li class="page-item">
-<a class="page-link" href="#">Next</a>
-</li>
-</ul>
+
+
+
+        <div align="center" id="paging"><?php echo $this->pagination->create_links(); ?></div>
+
 </div>
 
 

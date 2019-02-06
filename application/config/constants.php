@@ -89,4 +89,4 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 *
 */
 
-defined("ROW_PER_PAGE") or define("ROW_PER_PAGE",15);
+defined("ROW_PER_PAGE") or define("ROW_PER_PAGE",1);
