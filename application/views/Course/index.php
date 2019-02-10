@@ -68,7 +68,7 @@
 
 
 
-        <div align="center" id="paging"><?php echo $this->pagination->create_links(); ?></div>
+        <div align="center" id="paging"><?=$links ?></div>
 
 </div>
 
