@@ -35,7 +35,7 @@ class Course extends MY_Controller {
 
         $data['headline'] = $data['title'] = 'All Courses';
 
-				echo $this->get_role_id();
+				echo "<h1>".$this->get_login_name()."</h1>";
 				$this->layout("Course/index",$data);
 	}
 

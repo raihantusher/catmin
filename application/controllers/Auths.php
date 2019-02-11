@@ -44,4 +44,9 @@ class Auths extends MY_Controller
         redirect('/auths/login/');
     }
 
+    function register(){
+
+        $this->layout('Auths/register/',[]);
+    }
+
 }

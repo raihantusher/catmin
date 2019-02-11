@@ -47,7 +47,7 @@ class MY_Controller extends CI_Controller {
 
     public function get_login_name()
     {
-        $user = $this->ci->session->userdata('data');
+        $user = $this->session->userdata('data');
         return !empty($user) ? $user['full_name'] : false;
     }
 

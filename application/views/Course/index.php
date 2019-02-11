@@ -37,28 +37,28 @@
                                 <td><?php echo $row->date ?> </td>
                                 <td>
                                   <!--<?php// echo anchor("Course/edit/".$row->id,"class"=>"btn btn-primary")?>-->
-                                  <a href="<?=site_url("course/edit/").$row->id ?>" class="btn btn-primary">edit</a>
-                                  <a href="<?=site_url("course/delete/").$row->id ?>" class="btn btn-primary" onclick="return confirm('Are your sure?')">
-                                      <i class="fa fa-trash" aria-hidden="true"></i></a>
-
-                                    <button type="button" class="btn btn-primary" >
+                                  <a href="<?=site_url("course/edit/").$row->id ?>">
+                                     <button type="button" class="btn btn-primary" >
                                         <i class="fa fa-pencil"></i>
                                       </button>
+                                   </a> 
+                                   
+                                   <a href="<?=site_url("course/edit/").$row->id ?>">
+                                     <button type="button" class="btn btn-primary" >
+                                        <i class="fa fa-pencil"></i>
+                                      </button>
+                                   </a> 
+                                   <a href="<?=site_url("course/delete/").$row->id ?>">
                                       <button type="button" class="btn btn-danger">
                                           <i class="fa fa-trash" aria-hidden="true"></i>
                                       </button>
+                                   </a>
+                                     
                                   </td>
 
                             </tr>
                           <?php
                         }
-
-                    }else{
-                      ?>
-                        <tr>
-                        <td scope="col">no data found</td>
-                       </tr>
-                      <?php
 
                     }
                   ?>
