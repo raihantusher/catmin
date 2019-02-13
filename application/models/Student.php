@@ -40,10 +40,10 @@ class Student extends CI_Model
         if ($offset == 0 && $limit == 0) {
             $this->db->select('count(0) as num'); // select count(0) as num
         } else {
-            $this->db->select('student.*'); //select *
+            $this->db->select('course.*'); //select *
         }
 
-        $this->db->from('student');//from projects
+        $this->db->from('course');//from projects
         // if $cond["name"] is not empty then add where clause
         if (!empty($cond['name'])) {
             $where = "( projects.name LIKE '%{$cond['name']}%')";
@@ -89,7 +89,7 @@ class Student extends CI_Model
 
     function add($data)
     {
-        return $this->db->insert('student', $data); // insert $data(array) into projects
+        return $this->db->insert('course', $data); // insert $data(array) into projects
     }
 
     /**

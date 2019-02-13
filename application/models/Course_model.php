@@ -127,4 +127,6 @@ class Course_model extends CI_Model
         return $this->db->delete('course', ['id' => $id]); //delete projects by id
 
     }
+
+   
 }

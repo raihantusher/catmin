@@ -26,7 +26,7 @@
                   </tr>
               </thead>
               <tbody>
-                              <?php
+                  <?php
                     if(count($courses) > 0){
                         foreach ($courses as $row) {
                           ?>
@@ -37,9 +37,9 @@
                                 <td><?php echo $row->date ?> </td>
                                 <td>
                                   <!--<?php// echo anchor("Course/edit/".$row->id,"class"=>"btn btn-primary")?>-->
-                                  <a href="<?=site_url("course/edit/").$row->id ?>">
+                                  <a href="<?=site_url("lesson/").$row->id ?>">
                                      <button type="button" class="btn btn-primary" >
-                                        <i class="fa fa-pencil"></i>
+                                        View Lessons
                                       </button>
                                    </a> 
                                    
@@ -68,7 +68,7 @@
 
 
 
-        <div align="center" id="paging"><?php echo $this->pagination->create_links(); ?></div>
+        <div align="center" id="paging"><?=$links ?></div>
 
 </div>
 
@@ -77,3 +77,5 @@
     </div>
   </div>
 </div>
+
+

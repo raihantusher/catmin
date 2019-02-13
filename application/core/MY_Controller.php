@@ -26,8 +26,8 @@ class MY_Controller extends CI_Controller {
 
   public function paginate($config = [])
    {
-       $config['reuse_query_string'] = TRUE;
-       $this->load->library('pagination');
+       //$config['reuse_query_string'] = TRUE;
+      // $this->load->library('Pagination');
        $this->pagination->initialize($config);
    }
 
