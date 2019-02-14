@@ -34,6 +34,9 @@ class Auth
         }
         return FALSE;
     }
+    function register($data){
+        $this->ci->User->add($data);
+    }
 
 
     function logout()

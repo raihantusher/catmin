@@ -67,7 +67,7 @@ class User extends CI_Model
         $data['id'] = $this->get_new_id('users', 'id');
         $data['created_on'] = date('Y-m-d H:i:s');
         $data['password'] = sha1($data['password']);
-        $data['project_id'] = empty($data['project_id']) ? null : $data['project_id'];
+        //$data['project_id'] = empty($data['project_id']) ? null : $data['project_id'];
         $data['status'] = '1';
         unset($data['confirm_password']);
         return $this->db->insert('users', $data);
@@ -209,4 +209,19 @@ WHERE `id`=($this->user_id)";
         }
         return $returnArray;
     }
+
+
+    function get_new_id($table_name, $id)
+    {
+        $this->db->select_max($id);
+        $query = $this->db->get($table_name);
+        $max_id = $query->row();
+        if (isset($max_id->{$id}) && empty($max_id->{$id})) {
+            $new_id = 1;
+        } else {
+            $new_id = $max_id->{$id} + 1;
+        }
+        return $new_id;
+    }
+
 }

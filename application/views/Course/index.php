@@ -1,17 +1,13 @@
 <div class="container-fluid">
   <div class="col">
     <div class="row justify-content-center">
-
       <div class="card">
           <div class="card-body">
             <div class="d-flex docs-highlight mb-3">
-                <div class="mr-auto p-2 docs-highlight">Flex item</div>
                 <div class=""><a href="<?=site_url("course/add")?>" class="btn btn-success">Add Course</a>
 
+                </div>
             </div>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
-          ex ea commodo consequat.
-         </div>
 
 
          <div class="card-body">
@@ -36,10 +32,10 @@
                                 <td><?php echo $row->course_tag ?> </td>
                                 <td><?php echo $row->date ?> </td>
                                 <td>
-                                  <!--<?php// echo anchor("Course/edit/".$row->id,"class"=>"btn btn-primary")?>-->
+                                  
                                   <a href="<?=site_url("lesson/").$row->id ?>">
                                      <button type="button" class="btn btn-primary" >
-                                        View Lessons
+                                       Add Lessons
                                       </button>
                                    </a> 
                                    

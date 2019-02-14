@@ -46,7 +46,7 @@ class Auths extends MY_Controller
 
     function register(){
 
-        $this->layout('Auths/register/',[]);
+        $this->layout('Auths/register');
     }
 
 }
