@@ -15,6 +15,20 @@ $(document).ready( function () {
 } );
 </script>
 
+<script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+
+
+<script>
+                        ClassicEditor
+                                .create( document.querySelector( '#editor' ) )
+                                .then( editor => {
+                                        console.log( editor );
+                                } )
+                                .catch( error => {
+                                        console.error( error );
+                                } );
+                </script>
+
 <!-- Plugins and scripts required by this view-->
 <script src="<?php echo base_url("assets/chart.js/dist/Chart.min.js");?>"></script>
 <script src="<?php echo base_url("assets/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js");?>"></script>

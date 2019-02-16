@@ -34,8 +34,9 @@
           </main>
 
     </div>
-    <?php $this->load->view("Layout/dashboard-footer");?>
+
     <?php $this->load->view("Layout/ui-plugin");?>
+      <?php $this->load->view("Layout/dashboard-footer");?>
 
   </body>
 </html>

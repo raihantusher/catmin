@@ -17,52 +17,29 @@
 <body>
 
 <select name="sweets">
-  <option value="announcement">Announcement</option>
+  <option value="announce">Announce</option>
   <option value="video">Video</option>
   <option value="link">Link</option>
   <option value="quiz">Quiz</option>
+  <option value="article">article</option>
 </select>
 <div></div>
 
-<div id="announcement" style="display:none">Announcement will be here</div>
-<div id="video" style="display:none">Video link</div>
-<div id="link" style="display:none">Links</div>
-<div id="quiz" style="display:none">Quiz ":p"</div>
 
 
 
-<script>
-
-$( "select" )
-  .change(function () {
-
-    $( "select option:selected" ).each(function() {
-      var str ="#"+$( this ).val();
-
-      $("#announcement").hide();
-      $("#video").hide();
-      $("#link").hide();
-      $("#quiz").hide();
-      $(str).show();
-
-
-    });
-    //$( "div" ).text( str );
-  })
-  .change();
-</script>
 
 
 
-<div class="container-fluid">
- 
-    <form action="" method="post">
+<div class="container-fluid" style="display:none" id="article">
+
+    <form " action="" method="post">
       <div class="form-group">
         <label for="content">Lesson name </label>
         <input type="text" class="form-control" name="lesson name" id="contetinput" placeholder="lesson name">
         <input type="hidden" id="custId" name="course_id" value="<?=$course_id?>" >
         <label for="content">Title name </label>
-        <input type="text" class="form-control" name="title name" id="contetinput" placeholder="title name">
+        <input type="text" class="form-control" name="title name" id="editor" placeholder="title name">
         <label for="content">Description</label>
         <input type="text" class="form-control" name="description" id="desinput" placeholder="content input">
       </div>
@@ -70,26 +47,27 @@ $( "select" )
     </form>
   </div>
 
-  <div class="container-fluid">
-  
-      
-      <form action="" method="post">
+  <div class="container-fluid" style="display:none" id="video">
+
+
+      <form   method="post">
 
         <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-          </div>
         <div class="custom-file">
-          <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+          <input type="text" name="lesson_name">
+          <input type="hidden" name="type" value="video">
+          <input type="url" name="video_url" >
+          <input type="hidden" id="custId" name="course_id" value="<?=$course_id?>" >
+
         </div>
        </div>
+       <input type="submit" value="Add New Lesson">
       </form>
-    
+
   </div>
 
-  <div class="container-fluid">
-    <form action="" method="post">
+  <div class="container-fluid" style="display:none" id="announce">
+    <form  action="" method="post">
       <div class="form-group">
         <label for="content">Announcedment </label>
         <input type="text" class="form-control" name="announce" id="announceinput" placeholder="Title Announce">
